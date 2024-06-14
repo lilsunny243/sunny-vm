@@ -1,0 +1,16 @@
+name: nicobeck_registry-explorer-extension-desktop-extension
+services:
+  registry-explorer:
+    container_name: nicobeck_registry-explorer-extension-desktop-extension-service
+    deploy:
+      restart_policy:
+        condition: always
+    image: nicobeck/registry-explorer-extension:0.0.2
+    labels:
+      com.docker.desktop.extension: "true"
+      com.docker.desktop.extension.name: Registry Explorer
+    networks:
+      default: null
+networks:
+  default:
+    name: nicobeck_registry-explorer-extension-desktop-extension_default
